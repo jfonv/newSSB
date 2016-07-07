@@ -24,11 +24,11 @@ lint:
 
 tests:
 	@echo [tests]
-	@PORT=5555 DB=test-db LEVEL=silly $(BIN)/istanbul cover --print summary $(BIN)/_mocha -- --recursive -R dot
+	@PORT=5555 DB=newSSB LEVEL=silly $(BIN)/istanbul cover --print summary $(BIN)/_mocha -- --recursive -R dot
 
 watch: all
 	@echo [watch]
-	@$(BIN)/chokidar 'client/**/*.js' 'server/**/*.js' 'test/**/*.js' -c 'make all'
+	@$(BIN)/chokidar 'client/**/*.js' 'server/**/*.js' 'test/**/*.js' -c 'make  all'
 
 fast-tests-watch: fast-tests
 	@echo [fast-tests-watch]
@@ -36,4 +36,4 @@ fast-tests-watch: fast-tests
 
 fast-tests: main ready compile-back tests
 
-all: main ready compile-front compile-back lint tests
+all: main ready compile-front compile-back lint

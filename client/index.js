@@ -1,7 +1,7 @@
 import App from './components/App';
 import Home from './components/Home';
-import About from './components/About';
-import Faq from './components/Faq';
+import Fighters from './components/Fighters';
+import Weapons from './components/Weapons';
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -14,8 +14,8 @@ render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="about" component={About} />
-      <Route path="faq" component={Faq} />
+      <Route path="fighters" component={Fighters} />
+      <Route path="weapons" component={Weapons} />
     </Route>
   </Router>
   , document.getElementById('root'));
